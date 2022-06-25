@@ -5,7 +5,7 @@ namespace App\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static \Services\Email\Check ($checkEmail, $userEmail)
+ * @method bool \Services\EmailManager\check (string $checkEmail, string $userEmail)
  */
 class Email extends Facade
 {

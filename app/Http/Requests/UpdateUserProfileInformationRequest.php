@@ -2,15 +2,10 @@
 
 namespace App\Http\Requests;
 
-use App\Actions\Fortify\PasswordValidationRules;
-use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class UserRegisterRequest extends FormRequest
+class UpdateUserProfileInformationRequest extends FormRequest
 {
-    use PasswordValidationRules;
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -35,9 +30,8 @@ class UserRegisterRequest extends FormRequest
                 'string',
                 'email',
                 'max:255',
-                Rule::unique(User::class),
+                'unique:users,email,users,id',
             ],
-            'password' => $this->passwordRules(),
         ];
     }
 }

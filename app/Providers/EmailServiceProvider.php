@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Product;
 use App\Services\EmailManager;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,7 +16,7 @@ class EmailServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('email', function ($app) {
-            return new EmailManager($app);
+            return new EmailManager();
         });
     }
 
